@@ -1,4 +1,4 @@
-package personalfinancemanagementapp.repositorys;
+package personalfinancemanagementapp.repositories;
 
 import java.util.UUID;
 
