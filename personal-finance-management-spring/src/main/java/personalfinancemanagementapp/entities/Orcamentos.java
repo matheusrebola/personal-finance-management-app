@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public record Orcamentos(
@@ -15,7 +17,7 @@ public record Orcamentos(
 		BigDecimal valorMensal,
 		LocalDateTime dataInicio,
 		LocalDateTime dataFim,
-		Usuarios usuario,
-		Categorias categoria) {
+		@ManyToOne @JoinColumn(name = "usuario_id") Usuarios usuario,
+		@ManyToOne @JoinColumn(name = "categoria_id") Categorias categoria) {
 
 }

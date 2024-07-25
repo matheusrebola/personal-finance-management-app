@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public record Relatorios(
@@ -15,6 +17,6 @@ public record Relatorios(
 		LocalDateTime dataGeracao,
 		LocalDateTime periodoInicio,
 		LocalDateTime periodoFim,
-		Usuarios usuario) {
+		@ManyToOne @JoinColumn(name = "usuario_id") Usuarios usuario) {
 
 }
